@@ -1,0 +1,209 @@
+@import url("base.css");
+
+
+.hero h1 {
+  margin: 0;
+  font-size: 30px;
+  font-weight: 700;
+  font-family: "Nunito", sans-serif;
+  color:#070707;
+  text-align: center;
+  padding: 50px;
+}
+
+
+@media (min-width: 1024px) {
+  .hero {
+      background-attachment: fixed;
+    }
+  }
+  
+  @media (max-width: 991px) {
+    .hero {
+      height: auto;
+      padding: 100px 0 10px 0;
+    }
+  
+    .hero .hero-img {
+      text-align: center;
+      margin-top: 50px;
+    }
+  
+    .hero .hero-img img {
+      width: 100%;
+    }
+  }
+  
+
+/*--------------------------------------------------------------
+# editar usuario
+--------------------------------------------------------------*/
+
+.account-settings .user-profile {
+    margin: 0 0 1rem 0;
+    padding-bottom: 1rem;
+    text-align: center;
+    padding: 10px;
+}
+.account-settings .user-profile .user-avatar {
+    margin: 0 0 1rem 0;
+    padding: 30px;
+    width: 100%;
+    padding: 10px;
+    position: relative;
+    border-radius: 50%;
+
+    
+}
+.account-settings .user-profile .user-avatar img {
+    width: 90px;
+    height: 90px;
+    -webkit-border-radius: 100px;
+    -moz-border-radius: 100px;
+    border-radius: 100px;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 0 12px rgba(0, 0, 0, .2);
+    
+}
+.account-settings .user-profile h5.user-name {
+    margin: 0 0 0.5rem 0;
+}
+.account-settings .user-profile h5.user-email {
+    margin: 0;
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: #9fa8b9;
+}
+.account-settings .about {
+    margin: 2rem 0 0 0;
+    text-align: center;
+}
+.account-settings .about h5 {
+    margin: 0 0 15px 0;
+    color: #e15a00;
+}
+.account-settings .about p {
+    font-size: 0.825rem;
+}
+.form-control {
+    border: 1px solid #cfd1d8;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    font-size: .825rem;
+    background: #ffffff;
+    color: #2e323c;
+    
+}
+
+.card {
+  padding: 5px;
+  background: #ffffff;
+    
+}
+
+.btn.btn-primary {
+  margin: 10px;
+
+}
+
+.row.botones {
+  padding: auto;
+  text-align: center;
+  margin: 30px;
+}
+
+.row.gutters {
+  padding:5px;
+
+}
+
+.form-group{
+  padding: 5px;
+
+}
+
+
+.menu .nav {
+  list-style-type: none; /* Quita los puntos de la lista */
+  padding: 0; /* Elimina el padding por defecto */
+}
+
+.menu .nav-item {
+  margin: 0 15px; /* Espaciado entre los elementos del menú */
+}
+
+.menu .nav-link {
+  text-decoration: none; /* Quita el subrayado */
+  padding: 10px 15px; /* Añade padding alrededor del texto */
+  border-radius: 5px; /* Bordes redondeados */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Transición suave */
+}
+
+.menu .nav-link:hover {
+  background-color: rgba(9, 96, 190, 0.1); /* Color de fondo al hacer hover */
+  color: #052342; /* Cambia el color del texto al hacer hover */
+}
+
+.menu .nav-link:hover[data-bs-toggle="tab"] {
+  background-color: rgba(0, 123, 255, 0.1); /* Color de fondo al hacer hover para tabs */
+}
+
+/* Para el enlace de eliminar cuenta */
+.menu .nav-link[href="#deleteAccount"]:hover {
+  background-color: rgba(239, 16, 16, 0.1); /* Color de fondo especial para el enlace de eliminar cuenta */
+  color: rgb(239, 16, 16); /* Asegúrate de que el color se mantenga */
+}
+
+
+@media (max-width: 991px)  {
+  .menu .nav-link {
+    margin-bottom: 10px; /* Añade un margen inferior entre elementos del menú */
+  }
+  
+  .nav-item {
+    padding: 20px;
+    font-size: 30px;
+    font-weight: 600;
+    text-align: center;
+
+  }
+
+  .user-avatar{
+    height: 100px;
+    width: 100px;
+    margin: 0 auto;
+    padding: 30px;
+  }
+  
+
+  .user-name{
+    text-align: center;
+    font-size: 30px;
+    padding: 30px;
+    font-weight: 600;
+  }
+
+  .user-email{
+    text-align: center;
+    font-size: 30px;
+    font-weight: 600;
+  }
+
+  .form-control{
+    padding: 10px;
+    font-size: 30px;
+  }
+
+  .card{
+    padding: 10px;
+    font-size: 30px;
+  }
+
+  .hero h1{
+    font-size: 30px;
+  }
+}
+
+

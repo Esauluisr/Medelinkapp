@@ -1,0 +1,77 @@
+@import url("base.css");
+
+
+.hero h1 {
+  font-size: 30px;
+  font-family: "Nunito", sans-serif;
+  color:#070707;
+  text-align: center;
+  margin-top: 50px;
+  padding: 50px;
+}
+
+@media (max-width: 991px) {
+  .hero {
+    height: auto;
+    padding: 80px 0px 0 10px 0;
+  }
+
+  .hero h1 {
+    padding: 140px;
+    font-size: 60px;
+    text-align: center;
+    font-family: "Nunito", sans-serif;
+    margin-top: 20px;
+  }
+
+   
+}
+
+.container{
+  max-height: 430px; 
+  max-width: 100%; 
+  overflow: auto; 
+}
+
+.table {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0px;
+  background-color: rgb(255, 255, 255);
+  border-collapse: collapse;
+}
+
+.tr:hover {
+  background-color: #dfdeef;
+}
+
+.thead {
+  background-color: #101011;
+  color: white;
+}
+
+@media (max-width: 991px) {   
+  .thead {
+    background-color: #101011;
+    color: white;
+    font-size: 20px;
+    margin: 80px;
+  }
+
+  .tr{
+    font-size: 20px;
+  }
+  .container {
+    max-height: 1500px; 
+    max-width: 95%; 
+    overflow: auto; 
+  }
+
+  .table {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: auto;
+    background-color: rgb(255, 255, 255);
+    border-collapse: collapse;
+    padding: 80px;
+  }
+
+}

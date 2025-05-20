@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/login.css') }}"
+    />
+    <link
+      rel="icon"
+      href="{{ url_for('static', filename='image/logo.png') }}"
+      type="image/x-icon"
+    />
+    
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <title>Login</title>
+  </head>
+
+  <body>
+    <div class="limiter">
+      <div class="container-login100">
+        <div class="wrap-login100">
+          <span class="login100-form-title"> Login </span>
+          <div class="login100-form-title">
+            <img
+              src="{{ url_for('static', filename='image/logo.png') }}"
+              width="35%"
+            />
+          </div>
+          <form class="login100-form validate-form" method="POST">
+            <div class="form-row">
+              <!-- Columna 1: Email -->
+              <div class="column">
+                <div
+                  class="wrap-input100 validate-input"
+                  data-validate="Valid email is: a@b.c"
+                >
+                  <input
+                    class="input100"
+                    type="text"
+                    name="email"
+                    id="email"
+                    required
+                  />
+                  <span class="focus-input100" data-placeholder="Email"></span>
+                </div>
+              </div>
+
+              <!-- Columna 2: Password -->
+            </div>
+
+            <div class="column">
+              <div
+                class="wrap-input100 validate-input"
+                data-validate="Enter password"
+              >
+                <span class="btn-show-pass">
+                  <i class="bx bx-show-alt"></i>
+                </span>
+
+                <input
+                  class="input100"
+                  type="password"
+                  name="password"
+                  id="password"
+                  required
+                />
+                <span class="focus-input100" data-placeholder="password"></span>
+              </div>
+            </div>
+
+            <!--columna 3: login-->
+            <div class="container-login100-form-btn">
+              <div class="wrap-login100-form-btn">
+                <div class="login100-form-bgbtn"></div>
+                <button class="login100-form-btn" type="submit">Login</button>
+              </div>
+            </div>
+
+            <div class="text-center" style="padding: 50px; text-align: center">
+              <span class="txt1"> ¿No tienes cuenta? </span>
+
+              <a class="txt2" href="{{ url_for('main.register') }}">
+                registrate
+              </a>
+            </div>
+          </form>
+
+          {% with messages = get_flashed_messages( with_categories=true) %} {%
+          if messages %}
+          <div>
+            {% for category, message in messages %}
+
+            <div
+              class="alert alert-primary {{ category }} alert-dismissible"
+              role="alert"
+            >
+              {{ message }}"
+            </div>
+
+            {% endfor %}
+          </div>
+          {% endif %} {% endwith %}
+        </div>
+      </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/login.js') }}"></script>
+
+    <!-- Tu archivo JavaScript -->
+  </body>
+</html>

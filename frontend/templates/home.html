@@ -1,0 +1,52 @@
+{% extends "base.html" %} {% block title %}MeDeLink - Home{% endblock %}
+<!-- estilos -->
+
+{%block content %}
+
+<!-- seccion del abaut -->
+{% block extra_styles %}
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='css/home.css') }}"
+/>
+{% endblock %}
+
+<!-- seccion del home -->
+<section id="hero" class="hero d-flex align-items-center">
+  <div class="container">
+    <div class="row">
+      <div
+        class="col-lg-6 pt-5 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center"
+      >
+        <!--<h1 data-aos="fade-up">Protegemos tu salud al cuidado de tu piel</h1>-->
+        <h1 data-aos="fade-up">{{ current_user.nombre}} {{ current_user.apellido}}. Bienvenido a MeDeLink</h1>
+        <h2 data-aos="fade-up" data-aos-delay="400">
+          Protegemos tu salud , jamás diagnosticar con IA había sido tan rápido como lo es ahora.
+          Nuestra aplicación web va un paso más allá en la prevención del cáncer de piel.
+        </h2>
+        <div data-aos="fade-up" data-aos-delay="700">
+          <div class="text-center text-lg-start">
+            <a
+              href="{{ url_for('main.diagnostico') }}"
+              class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center"
+            >
+              <h3>Diagnóstico IA</h3>
+              <i class="bi bi-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos-delay="200">
+        <img
+          src="{{ url_for('static', filename='image/fondo.png') }}"
+          class="img-fluid"
+          alt="fondo"
+        />
+      </div>
+    </div>
+  </div>
+</section>
+<!-- fin de la seccion del home -->
+{% endblock %}
+<!-- fin de la seccion del home -->
+{% block extra_scripts %} {% endblock %}

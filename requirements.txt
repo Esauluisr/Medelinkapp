@@ -1,0 +1,8 @@
+Flask
+Flask-SQLAlchemy
+Flask-Login
+mysql-connector-python
+Flask-MySQLdb
+tensorflow
+Pillow
+pytest

@@ -1,0 +1,83 @@
+<!-- page base -->
+{% extends "base.html" %}
+
+<!-- titulo  -->
+{% block title %}abaut - MeDeLink{% endblock %}
+
+<!-- estilos -->
+{% block extra_styles %}
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='css/prevecion.css') }}"
+/>
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+/>
+{% endblock %}
+
+<!-- seccion del abaut -->
+{% block content %}
+<!-- seccion del home -->
+<section id="hero" class="hero d-flex align-items-center">
+  <div class="container-xl">
+    <h1>Medidas de Prevenciòn</h1>
+    <div class="card-container">
+      <div class="card">
+        <h3><i class="fas fa-sun icon"></i> Protegerse de la radiación UV</h3>
+        <p>
+          Limitar la exposición al sol, especialmente entre las 10 a.m. y las 4
+          p.m., cuando los rayos UV son más fuertes.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3><i class="fas fa-spray-can icon"></i> Usar protector solar</h3>
+        <p>
+          Aplicar protector solar con un SPF de al menos 30 cada dos horas, o
+          con mayor frecuencia si sudas o nadas. Escoge un bloqueador de amplio
+          espectro que proteja contra los rayos UVA y UVB.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3><i class="fas fa-tshirt icon"></i> Vestir ropa protectora</h3>
+        <p>
+          Utilizar sombreros de ala ancha, ropa de manga larga, y gafas de sol
+          con protección UV. También se recomienda utilizar ropa con tejidos de
+          protección solar, si es posible.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3><i class="fas fa-bed icon"></i> Evitar las camas de bronceado</h3>
+        <p>
+          La exposición a la radiación UV en camas de bronceado incrementa
+          significativamente el riesgo de cáncer de piel.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3><i class="fas fa-eye icon"></i> Observar cambios en la piel</h3>
+        <p>
+          Realizar autoexámenes regulares para detectar cambios en los lunares,
+          como asimetría, bordes irregulares, cambios de color, diámetro mayor
+          de 6 mm o cualquier otra evolución en el tamaño o forma.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3><i class="fas fa-user-md icon"></i> Consultar al dermatólogo</h3>
+        <p>
+          Realizar chequeos periódicos, especialmente si tienes antecedentes
+          familiares de cáncer de piel o tienes una piel clara y sensible al
+          sol.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Services Section -->
+
+<!-- fin de la seccion del home -->
+{% endblock %}

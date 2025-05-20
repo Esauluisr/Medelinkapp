@@ -1,0 +1,80 @@
+<!-- page base -->
+{% extends "base.html" %}
+
+<!-- titulo  -->
+{% block title %}Diagnóstico - MeDeLink{% endblock %}
+
+<!-- estilos -->
+{% block extra_styles %}
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{{ url_for('static', filename='css/diagnostico.css') }}"
+/>
+{% endblock %}
+
+<!-- seccion del abaut -->
+{% block content %}
+<!-- seccion del home -->
+<section id="hero" class="hero d-flex align-items-center">
+  <div class="container-xl">
+    <h1>Diagnostico IA</h1>
+    <div class="row">
+      <div class="col-md-6 d-flex align-items-stretch justify-content-center">
+        <div class="card mt-3 w-100">
+          <div class="card-header">SUBIR IMAGEN</div>
+          <div class="card-body">
+            <form
+              action="{{ url_for('main.diagnostico') }}"
+              method="POST"
+              enctype="multipart/form-data"
+            >
+              <input
+                type="file"
+                name="file"
+                accept="image/*"
+                required
+                class="form-control mb-3"
+              />
+              <button type="submit" class="btn btn-primary">
+                Subir Imagen y Predecir
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card para mostrar la predicción -->
+      <div class="col-md-6 d-flex align-items-stretch justify-content-center">
+        {% if filename %}
+        <div class="card mt-3 w-100">
+          <div class="card-header">RESULTADO</div>
+          <div class="card-body">
+            <h2>Archivo subido:</h2>
+            <div class="img-container">
+              <img
+                src="{{ url_for('static', filename='uploads/' + filename) }}"
+                class="img-fluid"
+                style="max-width: 150px; border-radius: 10px; height: auto"
+              />
+            </div>
+            <h2 class="mt-3">Resultado de la predicción: {{ prediction }}</h2>
+          </div>
+        </div>
+        {% else %}
+        <!-- Card vacía cuando no hay predicción -->
+        <div class="card mt-3 w-100">
+          <div class="card-header">Resultado</div>
+          <div class="card-body">
+            <p>No se ha realizado ninguna predicción todavía.</p>
+          </div>
+        </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>
+<!-- fin de la seccion del home -->
+{% endblock %} {% block extra_scripts %}
+<script src="{{ url_for('static', filename='js/imagen.js') }}"></script>
+{% endblock %}

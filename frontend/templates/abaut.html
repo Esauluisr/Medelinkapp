@@ -1,0 +1,64 @@
+<!-- page base -->
+{% extends "base.html" %}
+
+<!-- titulo  -->
+{% block title %}MeDeLink - Nosotros{% endblock %}
+
+<!-- estilos -->
+{% block extra_styles %}
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='css/abaut.css') }}"
+/>
+{% endblock %}
+
+<!-- seccion del abaut -->
+{% block content %}
+<!-- seccion del home -->
+<section id="hero" class="hero d-flex align-items-center">
+  <div id="services" class="services section-bg">
+    <div class="container">
+      <h1>Sobre Nosotros</h1>
+      <div class="row">
+        <div class="col-lg-4 col-md-6 icon-box">
+          <div class="icon"><i class="bi bi-briefcase"></i></div>
+          <h2 class="title"><a>Nosotros</a></h2>
+          <p class="description">
+            Somos un equipo comprometido con la detección temprana del cáncer de
+            piel mediante tecnologías avanzadas de inteligencia artificial.
+            Nuestro objetivo es ayudar a los profesionales de la salud y a las
+            personas a identificar cambios en la piel y a detectar señales
+            tempranas de posibles problemas.
+          </p>
+        </div>
+        <div class="col-lg-4 col-md-6 icon-box">
+          <div class="icon"><i class="bi bi-card-checklist"></i></div>
+          <h2 class="title"><a>Nuestra Misión</a></h2>
+          <p class="description">
+            Crear herramientas accesibles y precisas para el diagnóstico
+            temprano del cáncer de piel, con el fin de reducir el impacto de
+            esta enfermedad en la vida de las personas. Creemos en la prevención
+            y en la detección a tiempo, y trabajamos para proporcionar
+            soluciones innovadoras que apoyen a profesionales médicos y a la
+            comunidad en general.
+          </p>
+        </div>
+        <div class="col-lg-4 col-md-6 icon-box">
+          <div class="icon"><i class="bi bi-bar-chart"></i></div>
+          <h2 class="title"><a href="">Nuestro Enfoque</a></h2>
+          <p class="description">
+            Utilizamos modelos de redes neuronales avanzadas para clasificar
+            imágenes de la piel en categorías como benigno, maligno e
+            irrelevante. Esta tecnología está diseñada para ayudar en el proceso
+            de diagnóstico, proporcionando una segunda opinión respaldada por
+            datos.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Services Section -->
+
+<!-- fin de la seccion del home -->
+{% endblock %}

@@ -1,0 +1,61 @@
+{% extends "base.html" %} {% block title %}Historial - MeDeLink {% endblock %}
+<!-- estilos -->
+
+{%block content %}
+
+<!-- seccion del abaut -->
+{% block extra_styles %}
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='css/Historial.css') }}"
+/>
+{% endblock %}
+
+<!-- seccion del home -->
+<section id="hero" class="hero">
+  <div class="container-xl">
+    <h1>Historial De Diagnostico</h1>
+    <div class="container">
+      <table class="table">
+        <thead class="thead">
+          <tr>
+            <th class="text-center">NOMBRE</th>
+            <th class="text-center">IMAGEN DEL DIAGNOSTICO</th>
+            <th class="text-center">PREDICCIÒN</th>
+            <th class="text-center">FECHA</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for diagnostico in diagnosticos %}
+          <tr class="tr">
+            <td class="text-center">
+              {{ current_user.nombre+" "+current_user.apellido}}
+            </td>
+            <td class="text-center">
+              <img
+                src="{{ url_for('static', filename='uploads/' + diagnostico.nombrearchivo) }}"
+                alt="Imagen subida"
+                width="70"
+                height="70"
+              />
+            </td>
+            <td class="text-center">{{ diagnostico.predicion }}</td>
+            <td class="text-center">{{ diagnostico.fecha }}</td>
+          </tr>
+          {% else %}
+          <tr>
+            <td colspan="4" class="text-center">
+              No se encontraron diagnósticos para este usuario.
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- fin de la seccion del home -->
+{% endblock %}
+<!-- fin de la seccion del home -->
+{% block extra_scripts %} {% endblock %}

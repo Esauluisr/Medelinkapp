@@ -1,0 +1,154 @@
+<!-- page base -->
+{% extends "base.html" %}
+
+<!-- titulo  -->
+{% block title %}MeDeLink - Terminos de uso{% endblock %}
+
+<!-- estilos -->
+{% block extra_styles %}
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='css/termsofuse.css') }}"
+/>
+{% endblock %}
+
+<!-- seccion del abaut -->
+{% block content %}
+<!-- seccion del home -->
+<section id="hero" class="hero d-flex align-items-center">
+  <div id="counts" class="counts">
+    <div class="container">
+      <div class="row">
+        <div
+          class="image col-xl-5 d-flex align-items-stretch justify-content-center justify-content-xl-start"
+          data-aos="fade-right"
+          data-aos-delay="150"
+        >
+          <img
+            src="{{ url_for('static', filename='image/termsofuse.png') }}"
+            class="img-fluid"
+          />
+        </div>
+
+        <div
+          class="col-xl-7 d-flex align-items-stretch pt-4 pt-xl-0"
+          data-aos="fade-left"
+          data-aos-delay="300"
+        >
+          <div class="content d-flex flex-column justify-content-center">
+            <div class="row">
+              <h1>Terminos de uso</h1>
+              <div class="col-md-6 d-md-flex align-items-md-stretch">
+                <div class="count-box">
+                  <i class="fas fa-info-circle"></i>
+                  <span
+                    data-purecounter-start="0"
+                    data-purecounter-end="65"
+                    data-purecounter-duration="1"
+                    class="purecounter"
+                  ></span>
+                  <p>
+                    Uso del Sitio Web Este sitio web y su contenido son solo
+                    para fines informativos ek diagnostico delk cancer de piel
+                    se hace con inteligencia artificial por lo que su
+                    confibilidad es del 90%.
+                  </p>
+                </div>
+              </div>
+
+              <div class="col-md-6 d-md-flex align-items-md-stretch">
+                <div class="count-box">
+                  <i class="fas fa-exclamation-triangle"></i>
+                  <span
+                    data-purecounter-start="0"
+                    data-purecounter-end="85"
+                    data-purecounter-duration="1"
+                    class="purecounter"
+                  ></span>
+                  <p>
+                    Limitación de Responsabilidad ,no somos responsables de
+                    ningún daño directo, indirecto, incidental o consecuente
+                    derivado del uso de la información en este sitio.
+                  </p>
+                </div>
+              </div>
+
+              <div class="col-md-6 d-md-flex align-items-md-stretch">
+                <div class="count-box">
+                  <i class="fas fa-ban"></i>
+                  <span
+                    data-purecounter-start="0"
+                    data-purecounter-end="18"
+                    data-purecounter-duration="1"
+                    class="purecounter"
+                  ></span>
+                  <p>
+                    No puede copiar, reproducir, distribuir o utilizar ningún
+                    contenido del sitio sin el permiso expreso por escrito de
+                    los propietarios de derechos de autor
+                  </p>
+                </div>
+              </div>
+
+              <div class="col-md-6 d-md-flex align-items-md-stretch">
+                <div class="count-box">
+                  <i class="fas fa-user-shield"></i>
+                  <span
+                    data-purecounter-start="0"
+                    data-purecounter-end="15"
+                    data-purecounter-duration="1"
+                    class="purecounter"
+                  ></span>
+                  <p>
+                    Nuestro sitio web se hace resposable de la Privacidad y
+                    Seguridad de nuestros usuarios y cumplimos con las leyes de
+                    protección de datos aplicables.
+                  </p>
+                </div>
+              </div>
+
+              <div class="col-md-6 d-md-flex align-items-md-stretch">
+                <div class="count-box">
+                  <i class="fas fa-stethoscope"></i>
+                  <span
+                    data-purecounter-start="0"
+                    data-purecounter-end="15"
+                    data-purecounter-duration="1"
+                    class="purecounter"
+                  ></span>
+                  <p>
+                    El diagnostico con IA no sustituye de Asesoramiento Médico y
+                    Toda la información sobre cáncer de piel proporcionada en la
+                    web es de carácter general y no pretende ser exhaustiva
+                  </p>
+                </div>
+              </div>
+
+              <div class="col-md-6 d-md-flex align-items-md-stretch">
+                <div class="count-box">
+                  <i class="fas fa-shield-alt"></i>
+                  <span
+                    data-purecounter-start="0"
+                    data-purecounter-end="15"
+                    data-purecounter-duration="1"
+                    class="purecounter"
+                  ></span>
+                  <p>
+                    Los terminos de uso son para que el sito se mantega seguro
+                    Cualquier cambio y con esto mantenemos al usuario siempre
+                    con la seguirdad de darle un mejor servicio
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- End .content-->
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Services Section -->
+
+<!-- fin de la seccion del home -->
+{% endblock %}

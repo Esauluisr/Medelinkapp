@@ -1,0 +1,239 @@
+<!-- page base -->
+{% extends "base.html" %}
+
+<!-- titulo  -->
+{% block title %}MeDeLink - Editar Perfil{% endblock %}
+
+<!-- estilos -->
+{% block extra_styles %}
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{{ url_for('static', filename='css/editar.css') }}"
+/>
+/> {% endblock %}
+
+<!-- seccion del abaut -->
+{% block content %}
+<!-- seccion del home -->
+<section id="hero" class="hero d-flex align-items-center">
+  <div class="container">
+    <div class="row gutters">
+      <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12">
+        <div class="card h-100">
+          <div class="card-body">
+            <div class="account-settings">
+              <form action="" method="POST" enctype="multipart/form-data">
+              <div class="user-profile">
+                <div class="user-avatar">
+                  <label for="fileInput">
+                    <img 
+                    src="{{ url_for('main.verfoto', id=user.fotos[0].id) }}" 
+                    alt="imagen Perfil"
+                    style="width: 100px; height: 100px"
+                    />
+                  </label>
+                  <input id="fileInput" type="file" name="file" accept="image/*" style="display: none;" onchange="uploadImage()">
+                  <button class="btn btn-primary btn-sm" type="submit">Actualizar Foto</button>
+                </div>
+
+                <h5 class="user-name">
+                  {{ current_user.nombre}}
+                </h5>
+                <h6 class="user-email">{{ current_user.email }}</h6>
+              </div>
+              </form>
+              <hr />
+              <div class="menu mt-4 mb-4 justify-content-center">
+                <ul class="nav nav-pills flex-column">
+
+                  <li class="nav-item">
+                    <a class="nav-link"
+                      href="{{ url_for('main.myprofile') }}"
+                      >Mi Perfil</a
+                    >
+                  </li>
+
+                  <li class="nav-item">
+                    <a
+                      href="{{ url_for('main.editarusario') }}"
+                      class="nav-link"
+                      >Editar Perfil</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a
+                      href="{{ url_for('main.changepassword') }}"
+                      class="nav-link"
+                      >Cambiar Contraseña</a
+                    >
+                  </li>
+                  
+                  <li class="nav-item">
+                    <a
+                      class="nav-link"
+                      href="{{ url_for('main.deleteaccount') }}"
+                      style="color: rgb(239, 16, 16)"
+                      >Eliminar Cuenta</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
+        <div class="card h-100">
+          <div class="card-body">
+            <form
+              method="POST"
+            >
+              <div class="row gutters">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                  <h1 class="mb-2 text-primary">Datos personales</h1>
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                  <div class="form-group">
+                    <label for="username">Nombre</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="nombreuser"
+                      name="nombre"
+                      disabled
+                      value="{{ current_user.nombre }}"
+                      required
+                    />
+                  </div>
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                  <div class="form-group">
+                    <label for="useapellido">Apellido</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="apellidouser"
+                      value="{{ current_user.apellido }}"
+                      disabled
+                      name="apellido"
+                      required
+                    />
+                  </div>
+                </div>
+
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                  <div class="form-group">
+                    <label for="email">Email</label>
+                    <input
+                      type="email"
+                      class="form-control"
+                      id="emailuser"
+                      value="{{ current_user.email }}"
+                      disabled
+                      name="email"
+                      required
+                    />
+                  </div>
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                  <div class="form-group">
+                    <label for="phone">Telefono</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="telefonouser"
+                      name="telefono"
+                      value="{{ current_user.telefono }}"
+                      disabled
+                      required
+                    />
+                  </div>
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                  <div class="form-group">
+                    <label for="genero">Género</label>
+                    <select name="genero" id="genero" class="form-control"  required >
+                      <option value="Masculino" {% if user.genero == 'Masculino' %}selected{% endif %}>Masculino</option>
+                      <option value="Femenino" {% if user.genero == 'Femenino' %}selected{% endif %}>Femenino</option>
+                      <option value="Otro" {% if user.genero == 'Otro' %}selected{% endif %}>Otro</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                  <div class="form-group">
+                    <label for="edad">Edad</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="edaduser"
+                      value="{{ current_user.edad }}"
+                      disabled
+                      name="edad"
+                      required
+                    />
+                  </div>
+                </div>
+                <div class="row botones">
+                  <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                    <div class="text-right">
+                      <button
+                        type="button"
+                        id="editarBtn"
+                        name="submit"
+                        class="btn btn-secondary"
+                        onclick=" habilitarCampos()"
+                      >
+                        Editar
+                      </button>
+                      <button
+                        type="button"
+                        id="cancelarBtn"
+                        name="submit"
+                        class="btn btn-primary"
+                        onclick="desactivarCampos()"
+                      >
+                        Cancelar
+                      </button>
+                      <button
+                        type="submit"
+                        id="guardar"
+                        name="guardar"
+                        class="btn btn-success"
+                      >
+                        Guardar Cambios
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form>
+            {% with messages = get_flashed_messages( with_categories=true) %} {%
+              if messages %}
+              <div>
+                {% for category, message in messages %}
+    
+                <div
+                  class="alert alert-primary {{ category }} alert-dismissible"
+                  role="alert"
+                >
+                  {{ message }}"
+                </div>
+    
+                {% endfor %}
+              </div>
+              {% endif %} {% endwith %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- fin de la seccion del home -->
+{% endblock %}
+<!-- fin de la seccion del home -->
+{% block extra_scripts %}
+<script src="{{ url_for('static', filename='js/editarusuario.js') }}"></script>
+{% endblock %}

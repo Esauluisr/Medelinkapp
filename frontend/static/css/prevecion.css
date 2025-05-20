@@ -1,0 +1,107 @@
+
+@import url("base.css");
+
+/*--------------------------------------------------------------
+# Hero Section
+--------------------------------------------------------------*/
+
+.hero h1 {
+  margin: 0;
+  font-size: 30px;
+  font-weight: 700;
+  font-family: "Nunito", sans-serif;
+  color:#070707;
+  text-align: center;
+  padding: 20px;
+  margin-top: 10px;
+}
+
+
+
+/*--------------------------------------------------------------
+# card de prevencion
+--------------------------------------------------------------*/
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 20px;
+  width: 100%;
+  max-width: 1200px;
+  margin:auto;
+  padding: 8px;
+}
+
+.card {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  text-align: left;
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card h3 {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 10px;
+  font-family: 'Nunito', sans-serif;
+}
+
+.card p {
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.6;
+  font-family: 'Nunito', sans-serif;
+}
+
+.icon {
+  font-size: 1.5rem;
+  color: #008CBA;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+@media (max-width: 991px) {
+  .card-container {
+    grid-template-columns: repeat(auto-fill, minmax(800px, 1fr));
+    padding: 20px 20px;
+    font-size: 20px;
+    margin-top: auto;
+  }
+  .card {
+  padding: 30px;
+  font-size: 90px;
+  margin-top: 20PX;
+  }
+
+  .card h3 {
+    font-size: 30px;  
+    color: #333;
+    font-weight: 700;
+  }
+
+  .card p {
+    font-size: 30px;
+    color: #666;
+    line-height: 1.6;
+  }
+
+  .hero {
+    height: auto;
+    padding: 5px 0;
+  }
+
+  .hero h1 {
+    padding: 90px;
+    font-size: 60px;
+    text-align: center;
+    font-family: "Nunito", sans-serif;
+    margin-top: 110px 
+  }
+
+}

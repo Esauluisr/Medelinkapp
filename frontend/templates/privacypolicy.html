@@ -1,0 +1,126 @@
+<!-- page base -->
+{% extends "base.html" %}
+
+<!-- titulo  -->
+{% block title %}MeDeLink - Politica de privacidad{% endblock %}
+
+<!-- estilos -->
+{% block extra_styles %}
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='css/privacypolicy.css') }}"
+/>
+
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+/>
+{% endblock %}
+
+<!-- seccion del abaut -->
+{% block content %}
+<!-- seccion del home -->
+<section id="hero" class="hero d-flex align-items-center">
+  <div id="counts" class="counts">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-15 d-flex">
+          <div class="content d-flex flex-column r">
+            <div class="row">
+              <h1>Politica de privacidad</h1>
+              <div class="col-md-6">
+                <div class="count-box">
+                  <i class="fas fa-shield-alt"></i>
+                  <p>
+                    En MeDeLink, nos preocupamos por la seguridad y respetamos
+                    su privacidad y nos comprometemos a proteger sus datos
+                    personales. Esta Política de Privacidad describe cómo
+                    recopilamos, utilizamos y protegemos su información en
+                    relación con nuestra plataforma enfocada en la detección y
+                    clasificación del cáncer de piel. Es importante que lea y
+                    entienda nuestra política antes de usar el servicio
+                  </p>
+                </div>
+              </div>
+
+              <div class="col-md-6 d-md-flex align-items-md-stretch">
+                <div class="count-box">
+                  <i class="fas fa-database"></i>
+                  <p>
+                    La Información que Recopilamos que se encuentra disponible
+                    es para mejorar nuestros servicios: Los Datos Personales
+                    como Su nombre, dirección de correo electrónico y otra
+                    información de contacto que nos proporcione al registrarse
+                    en nuestro sitio o aplicación se usará exclusivamente para
+                    el propósito específico de la plataforma y se tratará con
+                    estricta confidencialidad.
+                  </p>
+                </div>
+              </div>
+
+              <div class="col-md-6 d-md-flex align-items-md-stretch">
+                <div class="count-box">
+                  <i class="fas fa-cogs"></i>
+                  <p>
+                    El Uso de la Información que recopilamos se utiliza con los
+                    siguientes fines: Proporcionar y mejorar nuestros servicios
+                    de análisis y detección de cáncer de piel. Personalizar la
+                    experiencia de usuario. Mejorar la precisión y rendimiento
+                    de nuestros modelos de inteligencia artificial (IA) mediante
+                    el uso de datos de imagen de forma anonimizada y, cuando sea
+                    posible, agregada. Comunicarnos con usted sobre cambios en
+                    los servicios, políticas o actualizaciones importantes.
+                  </p>
+                </div>
+              </div>
+
+              <div class="col-md-6 d-md-flex align-items-md-stretch">
+                <div class="count-box">
+                  <i class="fas fa-clock"></i>
+                  <p>
+                    Retención de Datos Solo conservaremos su información durante
+                    el tiempo necesario para los fines descritos en esta
+                    Política de Privacidad. Las imágenes cargadas para análisis
+                    se eliminarán de nuestros servidores después de un período
+                    de tiempo específico a menos que sea necesario para cumplir
+                    con obligaciones legales.
+                  </p>
+                </div>
+              </div>
+
+              <div class="col-md-6 d-md-flex align-items-md-stretch">
+                <div class="count-box">
+                  <i class="fas fa-user-shield"></i>
+                  <p>
+                    No compartimos su información con terceros a menos que sea
+                    necesario para cumplir con nuestras obligaciones legales,
+                    proteger los derechos y seguridad de nuestros usuarios o en
+                    casos donde usted haya dado su consentimiento expreso.
+                  </p>
+                </div>
+              </div>
+
+              <div class="col-md-6 d-md-flex align-items-md-stretch">
+                <div class="count-box">
+                  <i class="fas fa-user-check"></i>
+                  <p>
+                    Los Derechos que Usted tiene es a: Acceder, corregir o
+                    eliminar sus datos personales. Retirar su consentimiento
+                    para el procesamiento de sus datos en cualquier momento, lo
+                    que puede afectar su capacidad para utilizar nuestros
+                    servicios.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- End .content-->
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Services Section -->
+
+<!-- fin de la seccion del home -->
+{% endblock %}

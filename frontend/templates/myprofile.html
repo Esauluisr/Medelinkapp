@@ -1,0 +1,141 @@
+<!-- page base -->
+{% extends "base.html" %}
+
+<!-- titulo  -->
+{% block title %}MeDeLink - Mi Perfil{% endblock %}
+
+<!-- estilos -->
+{% block extra_styles %}
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{{ url_for('static', filename='css/editar.css') }}"
+/>
+/> {% endblock %}
+
+<!-- seccion del abaut -->
+{% block content %}
+<!-- seccion del home -->
+<section id="hero" class="hero d-flex align-items-center">
+  <div class="container">
+    <div class="row gutters">
+      <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12">
+        <div class="card h-100">
+          <div class="card-body">
+            <div class="account-settings">
+              <div class="user-profile">
+                <div class="user-avatar">
+                  {% if user.fotos and user.fotos|length > 0 %}
+                  <img
+                    src="{{ url_for('main.verfoto', id=user.fotos[0].id) }}" 
+                    alt="imagen Perfil"
+                    style="width: 100px; height: 100px"
+                  />
+                  {% else %}
+                  <img
+                    src="{{ url_for('static', filename='imagen/icon/lofo8.png') }}" 
+                    alt="imagen Perfil"
+                    style="width: 100px; height: 100px"
+                  />
+                  {% endif %}
+                </div>
+                <h5 class="user-name">{{ current_user.nombre}}</h5>
+                <h6 class="user-email">{{ current_user.email }}</h6>
+              </div>
+              <hr />
+              <div class="menu mt-4 mb-4 justify-content-center">
+                <ul class="nav nav-pills flex-column">
+                  <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('main.myprofile') }}"
+                      >Mi Perfil</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a
+                      class="nav-link"
+                      href="{{ url_for('main.editarusario') }}"
+                      >Editar Perfil</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a
+                      class="nav-link"
+                      href="{{ url_for('main.changepassword') }}"
+                      >Cambiar Contraseña</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a
+                      class="nav-link"
+                      href="{{ url_for('main.deleteaccount')}}"
+                      style="color: rgb(239, 16, 16)"
+                      >Eliminar Cuenta</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
+        <div class="card h-100">
+          <div class="card-body">
+            <div class="container mt-5">
+              <div class="row d-flex justify-content-center">
+                <div class="col-md-7">
+                    <div class="text-center">
+                    
+                      <img
+                        src="{{ url_for('main.verfoto', id=user.fotos[0].id) }}"
+                        width="100"
+                        class="rounded-circle"
+                      />
+                    </div>
+
+                    <div class="text-center mt-3">
+                      
+                      <div class="buttons" style="padding: 20px; border: none; outline: none;" >
+                        <div class="row" >
+                          <p class="text-primary">
+                            <strong>Nombre:</strong> {{ current_user.nombre }}
+                          </p>
+                          <p class="text-primary">
+                            <strong>Apellido:</strong> {{ current_user.apellido }}
+                          </p>
+                          <p class="text-primary">
+                            <strong>Correo:</strong> {{ current_user.email }}
+                          </p>
+                          <p class="text-primary">
+                            <strong>Genero:</strong> {{ current_user.genero }}
+                          </p>
+                          <p class="text-primary">
+                            <strong>Edad:</strong> {{ current_user.edad }}
+                          </p>
+                          <p class="text-primary">
+                            <strong>Telefono:</strong> {{ current_user.telefono }}
+                          </p>
+
+                        </div>
+                        
+                      </div>
+                      
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- fin de la seccion del home -->
+{% endblock %}
+<!-- fin de la seccion del home -->
+{% block extra_scripts %}
+<script src="{{ url_for('static', filename='js/editarusuario.js') }}"></script>
+{% endblock %}

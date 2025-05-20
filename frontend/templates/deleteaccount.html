@@ -1,0 +1,142 @@
+<!-- page base -->
+{% extends "base.html" %}
+
+<!-- titulo  -->
+{% block title %}abaut - MeDeLink{% endblock %}
+
+<!-- estilos -->
+{% block extra_styles %}
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{{ url_for('static', filename='css/editar.css') }}"
+/>
+/> {% endblock %}
+
+<!-- seccion del abaut -->
+{% block content %}
+<!-- seccion del home -->
+<section id="hero" class="hero d-flex align-items-center">
+  <div class="container">
+    <div class="row gutters">
+      <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12">
+        <div class="card h-100">
+          <div class="card-body">
+            <div class="account-settings">
+              <form action="" method="POST" enctype="multipart/form-data">
+                <div class="user-profile">
+                  <div class="user-avatar">
+                    <label for="fileInput">
+                      <img
+                        src="{{ url_for('main.verfoto', id=user.fotos[0].id) }}"
+                        alt="imagen Perfil"
+                        style="width: 100px; height: 100px"
+                      />
+                    </label>
+                  </div>
+
+                  <h5 class="user-name">{{ current_user.nombre}}</h5>
+                  <h6 class="user-email">{{ current_user.email }}</h6>
+                </div>
+              </form>
+              <hr />
+              <div class="menu mt-4 mb-4 justify-content-center">
+                <ul class="nav nav-pills flex-column">
+                  <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('main.myprofile') }}"
+                      >Mi Perfil</a
+                    >
+                  </li>
+
+                  <li class="nav-item">
+                    <a
+                      href="{{ url_for('main.editarusario') }}"
+                      class="nav-link"
+                      >Editar Perfil</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a
+                      href="{{ url_for('main.changepassword') }}"
+                      class="nav-link"
+                      >Cambiar Contraseña</a
+                    >
+                  </li>
+
+                  <li class="nav-item">
+                    <a
+                      class="nav-link"
+                      href="{{ url_for('main.deleteaccount') }}"
+                      style="color: rgb(239, 16, 16)"
+                      >Eliminar Cuenta</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
+        <div class="card h-100">
+          <div class="card-body">
+            <div class="row gutters">
+              <h1 class="mb-2 text-primary">Eliminar Cuenta</h1>
+              <div class="card-body">
+                <p>
+                  ¿Estás seguro de eliminar tu cuenta? Esta acción no se puede
+                  deshacer.
+                </p>
+
+                <div class="row botones">
+                  <div class="text-right">
+                    <form
+                      action="{{ url_for('main.deleteaccount') }}"
+                      method="POST"
+                    >
+                      <div class="row botones">
+                        <div class="text-right">
+                          <button
+                            class="btn btn-danger"
+                            id="confirmDelete"
+                            onclick="return confirm('¿Estás seguro de eliminar tu cuenta?');"
+                          >
+                            Eliminar Cuenta
+                          </button>
+                        </div>
+                      </div>
+                    </form>
+                    <form action="{{ url_for('main.home') }}">
+                      <div class="row botones">
+                        <div
+                          class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12"
+                        >
+                          <div class="text-right">
+                            <button
+                              type="submit"
+                              id="editarBtn"
+                              name="submit"
+                              class="btn btn-secondary"
+                            >
+                              Cancelar
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- fin de la seccion del home -->
+{% endblock %}
+<!-- fin de la seccion del home -->
+{% block extra_scripts %} {% endblock %}

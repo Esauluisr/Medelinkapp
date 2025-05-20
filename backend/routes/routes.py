@@ -21,7 +21,7 @@ def load_user(user_id):
 def inicio():
     return redirect(url_for('main.login'))
 
-@main.route('/index', methods=['GET', 'POST'])
+@main.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
         email = request.form.get('email')
@@ -34,7 +34,7 @@ def login():
             return redirect(url_for('main.home'))
         else:
             flash('Error al iniciar sesión. Verifique su nombre de usuario y/o contraseña')
-    return render_template('index.html')
+    return render_template('login.html')
 
 
 # ------ register ---------

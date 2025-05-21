@@ -40,7 +40,7 @@ def login():
 # ------ register ---------
 
 
-@main.route('/register', methods=['GET', 'POST'])
+@main.route('/RegistroDeUsuarios', methods=['GET', 'POST'])
 def register():
     if request.method == 'POST': 
         
@@ -59,7 +59,7 @@ def register():
         
         if password != cofimpassword:    
             flash('las contraseñas no coinciden')
-            return redirect(url_for('main.register'))
+            return redirect(url_for('main.RegistroDeUsuarios'))
         
         new_user = Usuario(
             nombre=nombre,
@@ -84,7 +84,7 @@ def register():
         
         flash('Registro exitoso,por favor iniciar sesión')
         return redirect(url_for('main.index'))
-    return render_template('register.html')
+    return render_template('RegistroDeUsuarios.html')
 
 
 # ------ logaut ---------
@@ -116,14 +116,14 @@ def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
 
-@main.route('/diagnostico', methods=['GET', 'POST'])
+@main.route('/Diagnostico', methods=['GET', 'POST'])
 @login_required
 def diagnostico():
     if request.method == 'POST':
         
         if 'file' not in request.files:
             flash('No se encontro el archivo', 'error')
-            return redirect(url_for('main.diagnostico'))
+            return redirect(url_for('main.Diagnostico'))
         
         
         file = request.files['file']
@@ -131,7 +131,7 @@ def diagnostico():
         
         if file.filename == '':
             flash('No has seleccionado ningun archivo', 'error')
-            return redirect(url_for('main.diagnostico'))
+            return redirect(url_for('main.Diagnostico'))
         
         
         if file and allowed_file(file.filename):
@@ -153,8 +153,8 @@ def diagnostico():
             db.session.add(nuevo_diagnostico)
             db.session.commit()
             
-            return render_template('diagnostico.html', filename=filename, prediction=prediction)
-    return render_template('diagnostico.html')
+            return render_template('Diagnostico.html', filename=filename, prediction=prediction)
+    return render_template('Diagnostico.html')
 
 @main.route('/uploads/<filename>')
 def uploaded_file(filename):
@@ -163,49 +163,49 @@ def uploaded_file(filename):
 
 #----- historial ---------
 
-@main.route('/historialmedico', methods=['GET', 'POST'])
+@main.route('/Historial', methods=['GET', 'POST'])
 @login_required
 def historialmedico():
     
     
     diagnosticos = Diagnostico.query.filter_by(usuario_id=current_user.id).all()
     
-    return render_template('historialmedico.html', diagnosticos=diagnosticos)
+    return render_template('Historial.html', diagnosticos=diagnosticos)
 
 
 # ------ medidas de prevencion---------
 
-@main.route('/prevencion')
+@main.route('/Prevencion')
 @login_required
 def prevencion():
-    return render_template('prevencion.html')  
+    return render_template('Prevencion.html')  
 
 
 # ------ about ---------
 
-@main.route('/abaut')
+@main.route('/Nosotros')
 @login_required
 def abaut():
-    return render_template('abaut.html')
+    return render_template('Nosotros.html')
 
 # ------ politica de privacidad---------
 
-@main.route('/privacypolicy')
+@main.route('/PoliticaDePrivacidad')
 @login_required
 def privacypolicy():
-    return render_template('privacypolicy.html')
+    return render_template('PoliticaDePrivacidad.html')
 
 
 # ------ termsofuse ---------
 
-@main.route('/termsofuse')
+@main.route('/TermosDeUso')
 @login_required
 def termsofuse():
-    return render_template('termsofuse.html')
+    return render_template('TerminosDeUso.html')
 
 # ------ myprofile ---------
 
-@main.route('/myprofile', methods=['GET', 'POST'])
+@main.route('/Miperfil', methods=['GET', 'POST'])
 @login_required
 def myprofile():
 
@@ -215,7 +215,7 @@ def myprofile():
         flash('Usuario no encontrado', 'error')
         return redirect(url_for('main.home'))
 
-    return render_template('myprofile.html', user=user)
+    return render_template('Miperfil.html', user=user)
 
 # ------ editprofile ---------
 
@@ -227,7 +227,7 @@ def verfoto(id):
     return Response(foto.imagen, mimetype='image/jpeg')
 
 
-@main.route('/editarusario', methods=['GET', 'POST'])
+@main.route('/EditarPerfil', methods=['GET', 'POST'])
 @login_required
 def editarusario():
 
@@ -263,7 +263,7 @@ def editarusario():
                 
             # Guarda los cambios
             db.session.commit()
-            return redirect(url_for('main.editarusario'))
+            return redirect(url_for('main.EditarPerfil'))
         
         # Actualiza los campos del usuario
         user.nombre = request.form.get('nombre')
@@ -276,7 +276,7 @@ def editarusario():
         # Verifica si alguno de los campos requeridos está vacío
         if not user.nombre or not user.apellido or not user.email:
             flash('La accion no puede ser completada. Por favor, vulve a intentarlo')
-            return redirect(url_for('main.editarusario'))
+            return redirect(url_for('main.EditarPerfil'))
 
         # Actualiza los campos del usuario
         user.nombre = user.nombre
@@ -289,14 +289,14 @@ def editarusario():
         
         #guardar cambios 
         db.session.commit()
-        return redirect(url_for('main.editarusario'))
+        return redirect(url_for('main.EditarPerfil'))
     
-    return render_template('editarusario.html', user=user) 
+    return render_template('EditarPerfil.html', user=user) 
 
 
 # ------ changepassword ---------
 
-@main.route('/changepassword', methods=['GET', 'POST'])
+@main.route('/CambiarContraseña', methods=['GET', 'POST'])
 @login_required
 def changepassword():
     
@@ -317,12 +317,12 @@ def changepassword():
         # Verifica si alguno de los campos requeridos está vacío
         if not password or not confirmpassword:
             flash('Por favor, complete todos los campos requeridos.', 'error')
-            return render_template('changepassword.html', user=user)
+            return render_template('CambiarContraseña.html', user=user)
         
         # Verifica que las contraseñas coincidan
         if password != confirmpassword:
             flash('Las contraseñas no coinciden.', 'error')
-            return render_template('changepassword.html', user=user)
+            return render_template('CambiarContraseña.html', user=user)
         
         # Actualiza y encripta la nueva contraseña
         user.password = generate_password_hash(password)
@@ -332,12 +332,12 @@ def changepassword():
         flash('Contraseña actualizada exitosamente , inicie sesión nuevamente')
         return redirect(url_for('main.login', user=user))
     
-    return render_template('changepassword.html', user=user)
+    return render_template('CambiarContraseña.html', user=user)
 
 
 # ------ deleteaccount ---------
 
-@main.route('/deleteaccount', methods=["GET",'POST'])
+@main.route('/EliminarCuenta', methods=["GET",'POST'])
 @login_required
 def deleteaccount():
     
@@ -360,5 +360,5 @@ def deleteaccount():
         flash('Cuenta eliminada exitosamente')
         return redirect(url_for('main.login'))
     
-    return render_template('deleteaccount.html', user=user)
+    return render_template('EliminarCuenta.html', user=user)
 

@@ -21,7 +21,7 @@ def load_user(user_id):
 def inicio():
     return redirect(url_for('main.login'))
 
-@main.route('/login', methods=['GET', 'POST'])
+@main.route('/Login', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
         email = request.form.get('email')
@@ -34,7 +34,7 @@ def login():
             return redirect(url_for('main.home'))
         else:
             flash('Error al iniciar sesión. Verifique su nombre de usuario y/o contraseña')
-    return render_template('login.html')
+    return render_template('Login.html')
 
 
 # ------ register ---------
@@ -74,7 +74,7 @@ def register():
         db.session.add(new_user)
         db.session.flush()
 
-        with open('backend/image/logo.png', 'rb') as f:
+        with open('backend/img/logo.png', 'rb') as f:
             img_bytes = f.read()
         
         
@@ -83,7 +83,7 @@ def register():
         db.session.commit()
         
         flash('Registro exitoso,por favor iniciar sesión')
-        return redirect(url_for('main.index'))
+        return redirect(url_for('main.login'))
     return render_template('RegistroDeUsuarios.html')
 
 
@@ -227,7 +227,7 @@ def verfoto(id):
     return Response(foto.imagen, mimetype='image/jpeg')
 
 
-@main.route('/EditarPerfil', methods=['GET', 'POST'])
+@main.route('/editarusario', methods=['GET', 'POST'])
 @login_required
 def editarusario():
 
@@ -263,7 +263,7 @@ def editarusario():
                 
             # Guarda los cambios
             db.session.commit()
-            return redirect(url_for('main.EditarPerfil'))
+            return redirect(url_for('main.editarusario'))
         
         # Actualiza los campos del usuario
         user.nombre = request.form.get('nombre')
@@ -276,7 +276,7 @@ def editarusario():
         # Verifica si alguno de los campos requeridos está vacío
         if not user.nombre or not user.apellido or not user.email:
             flash('La accion no puede ser completada. Por favor, vulve a intentarlo')
-            return redirect(url_for('main.EditarPerfil'))
+            return redirect(url_for('main.editarusario'))
 
         # Actualiza los campos del usuario
         user.nombre = user.nombre
@@ -289,10 +289,9 @@ def editarusario():
         
         #guardar cambios 
         db.session.commit()
-        return redirect(url_for('main.EditarPerfil'))
+        return redirect(url_for('main.editarusario'))
     
     return render_template('EditarPerfil.html', user=user) 
-
 
 # ------ changepassword ---------
 
@@ -330,7 +329,7 @@ def changepassword():
         # Guarda los cambios en la base de datos
         db.session.commit()
         flash('Contraseña actualizada exitosamente , inicie sesión nuevamente')
-        return redirect(url_for('main.login', user=user))
+        return redirect(url_for('main.login'))
     
     return render_template('CambiarContraseña.html', user=user)
 

@@ -114,17 +114,26 @@ iframe {
   min-height: 100vh;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content:center;
   align-items: center;
-  background: #077ad8;  
+  background-size: auto;
+  background-image: url("../image/fodologin.jpg") ;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .wrap-login100 {
   width: 500px;
   background: #fff;
-  border-radius: 10px;
+  border-radius: 20px;
   overflow: hidden;
   padding: 50px 80px 30px 60px;
+  box-shadow: 0 5px 10px 0px rgba(12, 12, 12, 0.1);
+  -moz-box-shadow: 0 5px 10px 0px rgba(5, 2, 2, 0.1);
+  -webkit-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
+  -o-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
+  -ms-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
 }
 
 /*------------------------------------------------------------------

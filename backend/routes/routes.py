@@ -116,7 +116,7 @@ def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
 
-@main.route('/Diagnostico', methods=['GET', 'POST'])
+@main.route('/diagnostico', methods=['GET', 'POST'])
 @login_required
 def diagnostico():
     if request.method == 'POST':
@@ -153,8 +153,8 @@ def diagnostico():
             db.session.add(nuevo_diagnostico)
             db.session.commit()
             
-            return render_template('Diagnostico.html', filename=filename, prediction=prediction)
-    return render_template('Diagnostico.html')
+            return render_template('diagnostico.html', filename=filename, prediction=prediction)
+    return render_template('diagnostico.html')
 
 @main.route('/uploads/<filename>')
 def uploaded_file(filename):
@@ -175,10 +175,10 @@ def historialmedico():
 
 # ------ medidas de prevencion---------
 
-@main.route('/Prevencion')
+@main.route('/prevencion')
 @login_required
 def prevencion():
-    return render_template('Prevencion.html')  
+    return render_template('prevencion.html')  
 
 
 # ------ about ---------
@@ -187,6 +187,7 @@ def prevencion():
 @login_required
 def abaut():
     return render_template('Nosotros.html')
+
 
 # ------ politica de privacidad---------
 
@@ -198,7 +199,7 @@ def privacypolicy():
 
 # ------ termsofuse ---------
 
-@main.route('/TermosDeUso')
+@main.route('/TerminosDeUso')
 @login_required
 def termsofuse():
     return render_template('TerminosDeUso.html')

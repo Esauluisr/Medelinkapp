@@ -11,7 +11,7 @@ from ..model_ia.cnn_model import load_and_predict
 main = Blueprint('main', __name__)
 login_manager = LoginManager()
 
-# ------ login ---------
+# ------ Login ---------
 
 @login_manager.user_loader
 def load_user(user_id):
@@ -37,7 +37,7 @@ def login():
     return render_template('Login.html')
 
 
-# ------ register ---------
+# ------ Registro ---------
 
 
 @main.route('/RegistroDeUsuarios', methods=['GET', 'POST'])
@@ -87,21 +87,21 @@ def register():
     return render_template('RegistroDeUsuarios.html')
 
 
-# ------ logaut ---------
+# ------ Logaut ---------
 @main.route('/logout')
 @login_required
 def logout():
     logout_user()
     return redirect(url_for('main.login'))
 
-# ------ home ---------
+# ------ Home ---------
 @main.route('/home')
 @login_required
 def home():
     return render_template('home.html', email=current_user.email)
 
 
-# ------ diagnostico ---------
+# ------ Diagnostico ---------
 # Directorio donde se guardarán las imágenes subidas
 
 UPLOAD_FOLDER = 'frontend/static/uploads/' 
@@ -161,7 +161,7 @@ def uploaded_file(filename):
     return url_for('static', filename='uploads/' + filename)
 
 
-#----- historial ---------
+#----- Historial ---------
 
 @main.route('/Historial', methods=['GET', 'POST'])
 @login_required
@@ -180,7 +180,7 @@ def historialmedico():
     return render_template('Historial.html', diagnosticos=diagnosticos)
 
 
-# ------ medidas de prevencion---------
+# ------ Medidas de prevencion---------
 
 @main.route('/prevencion')
 @login_required
@@ -188,7 +188,7 @@ def prevencion():
     return render_template('prevencion.html')  
 
 
-# ------ about ---------
+# ------ Nosotros ---------
 
 @main.route('/Nosotros')
 @login_required
@@ -196,7 +196,7 @@ def abaut():
     return render_template('Nosotros.html')
 
 
-# ------ politica de privacidad---------
+# ------ Politica de privacidad---------
 
 @main.route('/PoliticaDePrivacidad')
 @login_required
@@ -204,14 +204,14 @@ def privacypolicy():
     return render_template('PoliticaDePrivacidad.html')
 
 
-# ------ termsofuse ---------
+# ------ Terminos de uso ---------
 
 @main.route('/TerminosDeUso')
 @login_required
 def termsofuse():
     return render_template('TerminosDeUso.html')
 
-# ------ myprofile ---------
+# ------ my perfil ---------
 
 @main.route('/Miperfil', methods=['GET', 'POST'])
 @login_required
@@ -225,7 +225,7 @@ def myprofile():
 
     return render_template('Miperfil.html', user=user)
 
-# ------ editprofile ---------
+# ------ EditarPerfil ---------
 
 
 @main.route('/foto/<int:id>')
@@ -301,7 +301,7 @@ def editarusario():
     
     return render_template('EditarPerfil.html', user=user) 
 
-# ------ changepassword ---------
+# ------ CambiarContraseña ---------
 
 @main.route('/CambiarContraseña', methods=['GET', 'POST'])
 @login_required
@@ -342,7 +342,7 @@ def changepassword():
     return render_template('CambiarContraseña.html', user=user)
 
 
-# ------ deleteaccount ---------
+# ------ EliminarCuenta ---------
 
 @main.route('/EliminarCuenta', methods=["GET",'POST'])
 @login_required

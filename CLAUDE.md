@@ -103,3 +103,38 @@ El directorio `frontend` alberga todos los archivos relacionados con la interfaz
 4. **Understanding Configuration and Application Core**
    Beyond the main `backend` and `frontend` components, the repository includes crucial configuration files and the primary application file. These files are responsible for initializing the application, defining deployment settings, and managing external dependencies, ensuring the application can run and be deployed correctly.
 
+---
+
+## Research Query
+
+CodeViz: Visualize Function Call Graph
+
+*Session: 0e2e9f176fd867e176acef35edf09016 | Generated: 7/2/2025, 2:32:51 PM*
+
+### Analysis Summary
+
+I can help visualize the function call graph. To do this effectively, I need to know which functions or files you are most interested in. Could you please provide:
+
+1.  **The specific function(s) you want to visualize the call graph for?**
+2.  **Or, the file(s) where these functions are located?**
+3.  **Or, a general area of the codebase you're interested in (e.g., "authentication module", "payment processing")?**
+
+Once I have this information, I can start by analyzing the relevant files and then generate a Mermaid diagram representing the call graph.
+
+### Implementation Steps
+
+1. **Understanding the Input Requirements**
+   To effectively visualize the function call graph, the system requires specific input from the user. This input guides the analysis to the relevant parts of the codebase.
+
+2. **Specifying Functions for Visualization**
+   The system can generate a call graph for specific functions. Users can provide the exact names of the functions they are interested in.
+
+3. **Identifying Relevant Files**
+   Alternatively, users can provide the names of files where the functions of interest are located. This allows the system to scan the specified files for functions to include in the call graph.
+
+4. **Defining a General Area of Interest**
+   For broader analysis, users can specify a general area or module within the codebase, such as an `authentication module` or `payment processing`. This helps the system narrow down its search to a logical section of the project.
+
+5. **Generating the Call Graph Visualization**
+   Once the necessary information is provided, the system will analyze the relevant files to identify function calls and then generate a `Mermaid` diagram to visually represent the call graph.
+

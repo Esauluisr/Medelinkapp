@@ -17,8 +17,8 @@
 
    ```sh
 
-   1. Install the Python virtual environment within the project with the command:
-      paython install virtualenv.
+   1. Create the environment with the following command:
+      py -3 -m venv .venv
 
    2. Activate the virtual environment with the following command:
       .venv\Scripts\activate

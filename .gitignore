@@ -1,5 +1,5 @@
 .venv
 .vscode
-.__pycache__
+__pycache__
 backend/model_ia/model_vgg16.h5
 

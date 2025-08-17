@@ -23,7 +23,7 @@
    2. Activate the virtual environment with the following command:
       .venv\Scripts\activate
       
-   3. Install the requirements for the project with the following command:
+   3. Install the project requirements with the following command:
       pip install -r requirements.txt
 
    ```

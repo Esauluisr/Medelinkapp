@@ -1,4 +1,4 @@
-## 🛠 set-up
+## 🛠 Medelink - Project configuration
 
 1. Install the python y MySQL 
 
@@ -9,8 +9,8 @@
    3. Set up your database on your PC using MySQL and edit the
       dbconexion.py file depending on your database name.
 
-      Note: I used MySQL workbench to create the database, and you can download it from the following address:
-      https://dev.mysql.com/downloads/windows/installer/8.0.html
+      Note: I used MySQL workbench to create the database, and you can download it from 
+      the following address: https://dev.mysql.com/downloads/windows/installer/8.0.html
   ```
 
 2. Install the Python virtual environment and Activate, as well as install the requirements.txt from the terminal.

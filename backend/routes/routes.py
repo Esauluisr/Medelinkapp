@@ -53,6 +53,13 @@ def register():
         password = request.form.get('password')
         cofimpassword = request.form.get('confirmpassword')
         
+        if Usuario.query.filter_by(email=email).first():
+            flash('El correo ya está registrado, por favor ingrese uno diferente', 'error')
+            return redirect(request.url)
+        if email == '':
+            flash('Por favor, ingrese un nombre correo diferente', 'error')
+            return redirect(request.url)
+        
         if not genero:
             flash('Por favor, seleccione un género', 'error')
             return redirect(request.url)

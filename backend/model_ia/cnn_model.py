@@ -23,9 +23,9 @@ def load_and_predict(image_path):
 
         
         if prediction[0][0] > 0.5:
-            return 'maligno'
+            return 'MALIGNO'
         elif prediction[0][0] <= 0.5:
-            return 'benigno'
+            return 'BENIGNO'
         else:
             return 'desconocido'
 

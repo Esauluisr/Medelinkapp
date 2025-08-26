@@ -22,7 +22,7 @@ class Usuario(db.Model, UserMixin):
 # tabla de fotos
 class Foto(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    nobrefoto = db.Column(db.String(100), nullable=False)
+    nombrefoto = db.Column(db.String(100), nullable=False)
     imagen = db.Column(db.LargeBinary (length= 16 * 1024 * 1024 ), nullable=False)
     usuario_id = db.Column(db.Integer,db.ForeignKey('usuario.id'), nullable=False)
 

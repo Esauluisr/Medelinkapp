@@ -78,7 +78,7 @@ def register():
             img_bytes = f.read()
         
         
-        fotop = Foto(nobrefoto='logo.png', imagen=img_bytes, usuario_id=new_user.id)
+        fotop = Foto(nombrefoto='logo.png', imagen=img_bytes, usuario_id=new_user.id)
         db.session.add(fotop)
         db.session.commit()
         

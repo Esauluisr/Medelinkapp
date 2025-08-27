@@ -23,7 +23,6 @@
             <th class="text-center">IMAGEN DEL DIAGNOSTICO</th>
             <th class="text-center">PREDICCIÒN</th>
             <th class="text-center">FECHA</th>
-            <th class="text-center">ACCIONES</th>
           </tr>
         </thead>
         <tbody>
@@ -42,15 +41,7 @@
             </td>
             <td class="text-center">{{ diagnostico.predicion }}</td>
             <td class="text-center">{{ diagnostico.fecha }}</td>
-            <Td class="text-center">
-              <form action="" method="POST">
-                <input type="hidden" name="diagnostico_id" value="{{ diagnostico.id }}" />
-                <button
-                  type="submit"
-                  class="btn btn-danger"
-                  >Eliminar</button>
-              </form>
-            </Td>
+            
           </tr>
           {% else %}
           <tr>

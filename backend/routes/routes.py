@@ -175,15 +175,7 @@ def uploaded_file(filename):
 def historialmedico():
     
     diagnosticos = Diagnostico.query.filter_by(usuario_id=current_user.id).all()
-
-    #eliminar el diagnostico de la base de datos
-    if request.method == 'POST':
-        diagnostico_id = request.form.get('diagnostico_id')
-        diagnostico = Diagnostico.query.get(diagnostico_id)
-        if diagnostico:
-            db.session.delete(diagnostico)
-            db.session.commit()
-        return redirect(url_for('main.historialmedico'))
+    
     return render_template('Historial.html', diagnosticos=diagnosticos)
 
 

@@ -35,6 +35,7 @@ class Diagnostico(db.Model):
     ruta = db.Column(db.String(120), nullable=False)
     predicion = db.Column(db.String(100), nullable=False)
     fecha= db.Column(db.Date, default=datetime.today)
+    activo = db.Column(db.Boolean, default=True)
     usuario_id = db.Column(db.Integer,db.ForeignKey('usuario.id'), nullable=False)
     
     Usuario = db.relationship('Usuario', backref=db.backref('diagnosticos', lazy=True))

@@ -40,9 +40,7 @@
               />
             </td>
             <td class="text-center">{{ diagnostico.predicion }}</td>
-            <td class="text-center">{{ diagnostico.fecha }}</td>
-            
-          </tr>
+            <td class="text-center">{{ diagnostico.fecha.strftime('%d/%m/%Y') }}</td>
           {% else %}
           <tr>
             <td colspan="4" class="text-center">
